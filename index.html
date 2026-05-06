@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zan Tian</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ── Shifter Panel ── -->
+  <aside class="shifter-panel">
+
+    <div class="console">
+      <p class="console-hint">SHIFT TO NAVIGATE</p>
+
+      <div class="gate-wrapper" id="gateWrapper">
+        <svg class="gate-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gate lines -->
+          <line x1="50"  y1="55"  x2="50"  y2="175" class="gate-path"/>
+          <line x1="100" y1="55"  x2="100" y2="175" class="gate-path"/>
+          <line x1="150" y1="55"  x2="150" y2="115" class="gate-path"/>
+          <line x1="50"  y1="115" x2="150" y2="115" class="gate-path"/>
+
+          <!-- Gear number labels -->
+          <text x="50"  y="34"  class="gear-label" id="glabel-1">1</text>
+          <text x="100" y="34"  class="gear-label" id="glabel-3">3</text>
+          <text x="150" y="34"  class="gear-label" id="glabel-5">5</text>
+          <text x="50"  y="203" class="gear-label" id="glabel-2">2</text>
+          <text x="100" y="203" class="gear-label" id="glabel-4">4</text>
+
+          <!-- Clickable gear nodes -->
+          <circle cx="50"  cy="55"  r="8" class="gear-node" id="node-1" data-gear="1"/>
+          <circle cx="50"  cy="175" r="8" class="gear-node" id="node-2" data-gear="2"/>
+          <circle cx="100" cy="55"  r="8" class="gear-node" id="node-3" data-gear="3"/>
+          <circle cx="100" cy="175" r="8" class="gear-node" id="node-4" data-gear="4"/>
+          <circle cx="150" cy="55"  r="8" class="gear-node" id="node-5" data-gear="5"/>
+        </svg>
+
+        <!-- Draggable knob -->
+        <div class="knob" id="knob">
+          <div class="knob-face">
+            <span class="knob-num" id="knobNum">N</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-readout">
+        GEAR <span class="readout-val" id="readout">N</span>
+      </div>
+    </div>
+
+    <nav class="gear-nav">
+      <button class="nav-item" data-gear="1">① About Me</button>
+      <button class="nav-item" data-gear="2">② Projects</button>
+      <button class="nav-item" data-gear="3">③ Research</button>
+      <button class="nav-item" data-gear="4">④ Experience</button>
+      <button class="nav-item" data-gear="5">⑤ Skills &amp; Contact</button>
+    </nav>
+
+  </aside>
+
+  <!-- ── Content Panel ── -->
+  <main class="content-panel">
+
+    <!-- Neutral / Welcome -->
+    <section class="page active" id="page-N">
+      <div class="welcome">
+        <div class="welcome-name">ZAN TIAN</div>
+        <p class="welcome-sub">Statistics</p>
+        <div class="welcome-icon">⚙</div>
+        <h2>hello, welcome to my portfolio</h2>
+        <p>Use the gear shifter to navigate through my story.</p>
+        <div class="welcome-hint">← Shift into gear to begin</div>
+        <div class="welcome-contact">
+          <a href="mailto:zanqitian07@gmail.com" class="wc-link">zanqitian07@gmail.com</a>
+          <span class="wc-sep">·</span>
+          <a href="https://linkedin.com/in/zan-tian" target="_blank" class="wc-link">LinkedIn</a>
+          <span class="wc-sep">·</span>
+          <a href="https://github.com/qtzan" target="_blank" class="wc-link">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gear 1 — About Me -->
+    <section class="page" id="page-1">
+      <div class="section-header">
+        <span class="gear-badge">1</span>
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-intro">
+        
+        <div class="about-intro-text">
+          <h3>Zan Tian</h3>
+          <p>I am pursuing a Bachelor of Science in Statistics at the University of British Columbia, interested in data analysis and producing impactful insights.</p>
+        </div>
+      </div>
+
+      <div class="about-sections">
+
+        <div class="about-section">
+          <h4>Education</h4>
+          <p>B.Sc. Statistics — University of British Columbia &nbsp;<span class="text-muted">Expected April 2028</span></p>
+          <p>2024 Loblaws National Scholarship Award — $2,000</p>
+        </div>
+
+        <div class="about-section">
+          <h4>Currently</h4>
+          <p>Technical Director @ The Undergraduate Statistics Society at UBC</p>
+          <p>Undergraduate Research Lead @ Youreka Canada</p>
+        </div>
+
+        <div class="about-section">
+          <h4>Interests</h4>
+          <p>Cars (Toyota Supras forever)</p>
+          <p>Basketball (Steph Curry is my goat)</p>
+          <p>Badminton</p>
+          <p>Hackathons &amp; Datathons (2025 Bolt Datathon (Semi-finalist) &nbsp;·&nbsp; 2025 nwPlus HackCamp &nbsp;·&nbsp; 2026 Hack the Coast) </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gear 2 — Projects -->
+    <section class="page" id="page-2">
+      <div class="section-header">
+        <span class="gear-badge">2</span>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="project-entries">
+
+        <div class="project-entry">
+          <h3><a href="https://github.com/qtzan/10-Year-Vancouver-Incident-Trends-With-6-Month-Forecast" target="_blank" class="project-title-link">Vancouver Crime Forecasting Dashboard</a></h3>
+          <p class="project-tech">PostgreSQL &nbsp;·&nbsp; Python / Pandas &nbsp;·&nbsp; Tableau</p>
+          <p>Built an end-to-end crime analytics dashboard using PostgreSQL, Pandas, and Tableau to aggregate 900k+ records of incident reports; engineered rolling and year-over-year metrics across 10 years of Vancouver police data. Implemented Exponential Smoothing models to produce a 6-month neighbourhood-level forecast, visualized in a Tableau dashboard.</p>
+          <p>Identified and resolved key edge-cases including temporal gaps in data records requiring dataset appending, and implemented a solution for the divide-by-zero case when determining year-over-year values.</p>
+          <div class="tableau-wrapper">
+            <div class='tableauPlaceholder' id='viz1778105905544' style='position: relative'>
+              <noscript>
+                <a href='#'><img alt=' ' src='https://public.tableau.com/static/images/Hi/HistoricVancouverCrimeTrendsWith6-MonthForecastZan/Dashboard1/1_rss.png' style='border: none' /></a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='HistoricVancouverCrimeTrendsWith6-MonthForecastZan/Dashboard1' />
+                <param name='tabs' value='yes' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Hi/HistoricVancouverCrimeTrendsWith6-MonthForecastZan/Dashboard1/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+                <param name='filter' value='publish=yes' />
+              </object>
+            </div>
+            <script type='text/javascript'>
+              var divElement = document.getElementById('viz1778105905544');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px';
+              } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.5) + 'px';
+              } else {
+                vizElement.style.width = '100%';
+                vizElement.style.minHeight = '400px';
+                vizElement.style.maxHeight = (divElement.offsetWidth * 0.8) + 'px';
+              }
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <h3><a href="https://github.com/qtzan/Hack-the-Coast-2026" target="_blank" class="project-title-link">BridgeCare</a></h3>
+          <p class="project-tech">TypeScript &nbsp;·&nbsp; React &nbsp;·&nbsp; Figma &nbsp;·&nbsp; SQLite</p>
+          <p>Designed and prototyped an AI-powered healthcare application integrating patient and provider portals, automated intake workflows, and trained logic to streamline appointment matching and reduce administrative friction. Created patient/provider dashboards in Figma and React; conducted interviews with real doctors to receive guidance and optimize for user experience.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gear 3 — Research -->
+    <section class="page" id="page-3">
+      <div class="section-header">
+        <span class="gear-badge">3</span>
+        <h2>Research</h2>
+      </div>
+
+      <div class="research-entries">
+
+        <div class="research-entry">
+          <h3>(1st Place) Monetary Tightening Shocks and Opioid-Related Harms across Canada: A Province by Quarter Analysis (2016–2025)</h3>
+          <p class="research-meta">Youreka Vancouver &nbsp;·&nbsp; April 2026 &nbsp;|&nbsp; Alex Zhu, Ehab Gheriani, Mohammad Tabar, Zan Tian* &nbsp;(*Senior Author)</p>
+          <p>Led a team to build a province-by-quarter panel analysis examining whether Bank of Canada monetary tightening spikes predict subsequent opioid toxicity deaths and hospitalizations across Canada. Assembled and analyzed a multi-source dataset using R and Excel; Created shock variables to run multiple regressions separately for both deaths and hospitalizations as well as a joint F-test at a significance level of 0.05. Prepared an academic research poster and manuscript presented in front of judges.</p>
+          <p>Results showed that interest rate hikes ≥0.50% were jointly associated with increases in opioid-related deaths when controlling for unemployment (joint F-test p = 0.0246), while hospitalization results were not statistically significant under any model. The two-quarter lag coefficient was consistently larger than the one-quarter lag, suggesting the association builds over time.</p>
+          <div class="research-links">
+            <button onclick="openManuscript()" class="research-link manuscript-btn">Read Manuscript →</button>
+          </div>
+          <div class="research-poster">
+            <img src="poster-opioid.png" alt="Monetary Tightening &amp; Opioid Harms Research Poster" />
+          </div>
+        </div>
+
+        <div class="research-entry">
+          <h3>Comparison of Joint Space Width of the Knee in Patients of Normal Health Versus Patients with Osteoarthritis</h3>
+          <p class="research-meta">University of Calgary — HYRS Program &nbsp;·&nbsp; July – August 2023 &nbsp;|&nbsp; Supervised by Dr. Sarah L. Manske &amp; Tadiwa H. Waungana</p>
+          <p>Processed Weight-Bearing CT knee scan data and extracted joint-space metrics to evaluate the risk of osteoarthritis. Executed a preprocessing pipeline of cropping and segmentation; ran joint-space mapping to compute medial/lateral ratios per knee. Organized results for future clinical applications and presented findings in an academic research poster at the University of Calgary.</p>
+          <p>Findings suggested absolute JSW measures were better at differentiating between healthy and OA individuals, contrasting with prior literature that found ratio-based measures more sensitive.</p>
+          <div class="research-poster">
+            <img src="poster-hyrs.jpg" alt="HYRS Osteoarthritis Research Poster" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gear 4 — Experience -->
+    <section class="page" id="page-4">
+      <div class="section-header">
+        <span class="gear-badge">4</span>
+        <h2>Experience</h2>
+      </div>
+      <div class="resume-layout">
+
+        <div class="resume-section">
+          <h3 class="resume-section-title">Education</h3>
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div>
+                <h4>Bachelor of Science in Statistics</h4>
+                <p class="resume-org">University of British Columbia &nbsp;·&nbsp; Vancouver, BC</p>
+              </div>
+              <span class="resume-date">Aug 2024 – Present</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Awards: 2024 Loblaws National Scholarship Award ($2,000)</li>
+              <li>Relevant Coursework: Object-Oriented Design, Calculus, Linear Algebra, Statistics, Discrete Math, Probability I</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3 class="resume-section-title">Experience</h3>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div>
+                <h4>Undergraduate Research Lead</h4>
+                <p class="resume-org">Youreka Canada &nbsp;·&nbsp; Vancouver, BC</p>
+              </div>
+              <span class="resume-date">Jan 2026 – Present</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Leading a team to build a province-by-quarter analysis (2016Q1–2025Q2) examining whether Bank of Canada monetary tightening spikes predict subsequent opioid toxicity deaths and hospitalizations across Canada</li>
+              <li>Using R and Excel to assemble and analyze a multi-source dataset; preparing an academic research poster and manuscript for final presentation in front of judges</li>
+            </ul>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div>
+                <h4>Technical Director</h4>
+                <p class="resume-org">The Undergraduate Statistics Society at UBC &nbsp;·&nbsp; Vancouver, BC</p>
+              </div>
+              <span class="resume-date">Oct 2025 – Present</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Maintain and ship updates to the Statistics Undergraduate Society website in collaboration with the tech team; troubleshooting bugs and publishing content changes on a regular basis</li>
+              <li>Leading data-focused projects that engage students in applied analytics and dataset management, including delegating tasks, establishing timelines, and reviewing outputs for quality</li>
+              <li>Led the flagship Data Scavenger Hunt by designing dataset-driven challenge problems, building the grading workflow, and evaluating ~60 participants' submissions to determine final standings</li>
+            </ul>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div>
+                <h4>Orientation Leader</h4>
+                <p class="resume-org">University of British Columbia (Jumpstart) &nbsp;·&nbsp; Vancouver, BC</p>
+              </div>
+              <span class="resume-date">Aug 2025 &nbsp;·&nbsp; <span class="returning">Returning Aug 2026</span></span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Worked alongside faculty, Centre for Student Development, and Leadership Staff to build community with ~30 incoming students per group</li>
+              <li>Used leadership skills to become a model for new students unfamiliar with the university environment and prepare them for their studies</li>
+            </ul>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div>
+                <h4>Biostatistics Research Assistant</h4>
+                <p class="resume-org">University of Calgary (HYRS) &nbsp;·&nbsp; Calgary, AB</p>
+              </div>
+              <span class="resume-date">Jul – Aug 2023</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Processed Weight-Bearing CT knee scan data and extracted joint-space metrics to evaluate the risk of osteoarthritis</li>
+              <li>Executed a preprocessing pipeline of cropping and segmentation; ran joint-space mapping to compute medial/lateral ratios per knee</li>
+              <li>Organized results for future clinical applications and presented findings in an academic research poster at the university</li>
+            </ul>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <div>
+                <h4>Pharmaceutical Assistant</h4>
+                <p class="resume-org">Shoppers Drug Mart &nbsp;·&nbsp; Brooks, AB</p>
+              </div>
+              <span class="resume-date">Aug 2023 – Seasonal</span>
+            </div>
+            <ul class="resume-bullets">
+              <li>Learned the uses and side effects of different medications to provide customers with assistance and address concerns</li>
+              <li>Used pharmacy software to enter patient information and process 100–150 prescriptions per day with accurate data entry</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gear 5 — Skills & Contact -->
+    <section class="page" id="page-5">
+      <div class="section-header">
+        <span class="gear-badge">5</span>
+        <h2>Skills &amp; Contact</h2>
+      </div>
+      <div class="skills-contact-grid">
+
+        <div class="skills-section">
+          <h3>Technical Skills</h3>
+
+          <div class="skill-group">
+            <h4>Languages</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Developer Tools &amp; Libraries</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Jupyter</span>
+              <span class="skill-tag">RStudio</span>
+              <span class="skill-tag">Excel</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">SQLAlchemy</span>
+              <span class="skill-tag">React</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Analytical</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Data Cleaning &amp; Wrangling</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Bootstrapping</span>
+              <span class="skill-tag">Probability</span>
+              <span class="skill-tag">Hypothesis Testing</span>
+              <span class="skill-tag">Exponential Smoothing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <h3>Get In Touch</h3>
+          <p class="contact-intro">I'm always open to new opportunities, research collaborations, or just a conversation about statistics and data science.</p>
+          <div class="contact-links">
+            <a class="contact-item" href="mailto:zanqitian07@gmail.com">
+              <span class="contact-icon">✉</span>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-val">zanqitian07@gmail.com</span>
+              </div>
+            </a>
+            <a class="contact-item" href="https://linkedin.com/in/zan-tian" target="_blank">
+              <span class="contact-icon">in</span>
+              <div>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-val">linkedin.com/in/zan-tian</span>
+              </div>
+            </a>
+            <a class="contact-item" href="https://github.com/qtzan" target="_blank">
+              <span class="contact-icon">&#60;/&#62;</span>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-val">github.com/qtzan</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ── Manuscript Modal ── -->
+<div class="modal-overlay" id="manuscriptModal" onclick="closeManuscriptOnBg(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeManuscript()">✕</button>
+    <div class="modal-content">
+
+      <div class="ms-title-block">
+        <h1>Monetary Tightening Shocks and Opioid-Related Harms across Canada: A Province by Quarter Analysis</h1>
+        <p class="ms-authors">Alex Zhu, Ehab Gheriani, Mohammad Tabar, and Zan Tian* &nbsp;(*Senior Author)</p>
+        <p class="ms-meta">April 26th, 2026 &nbsp;·&nbsp; Youreka Vancouver</p>
+      </div>
+
+      <div class="ms-section">
+        <h2>Abstract</h2>
+        <p>Canada continues to combat the fatal use of opioids across all provinces despite efforts to unravel underlying reasons that may contribute to the crisis. This study examines whether macroeconomic factors, specifically Bank Of Canada interest rate hikes, are associated with subsequent changes in opioid-related deaths and hospitalizations across the nation. Using a province-by-quarter panel from 2016Q1 to 2025Q2, we combined provincial opioid-harm data with the Bank of Canada policy rate and quarterly provincial unemployment. For our study, we defined a "tightening-shock" as an increase in 0.50 percentage points relative to the previous quarter; and examined whether there was change in opioid harms one to two quarters later. Our regression results indicated that interest rate hikes under our threshold were jointly associated with increases in opioid-related deaths when analyzed under our unemployment control model, while results for hospitalizations were not statistically significant under any model. These findings could be helpful for public health awareness in metro-governments and could potentially be a factor to anticipate and mitigate opioid harms during periods of aggressive policy hikes.</p>
+      </div>
+
+      <div class="ms-section">
+        <h2>Introduction</h2>
+        <p>Despite the country's developed healthcare and social support systems, opioid use remains highly prevalent in Canada. In many ways, opioid use appears difficult to eliminate entirely, as supply and demand persist even under strict policy conditions. Locally, British Columbia has stood out due to its recent approach to drug policy, including the decriminalization of certain substances such as fentanyl, morphine, and methamphetamine. Policies such as these highlight the ongoing effort, both within Canada and globally, to reduce opioid use and its associated harms. People use opioids for a variety of reasons, including curiosity, peer influence, and stress relief. As a result, many strategies aim to reduce the perceived appeal of opioid use, particularly among younger populations. At the same time, efforts have been made to reduce stigma, with the goal of allowing individuals to access support services without fear of judgment.</p>
+        <p>Despite these efforts, opioid harm-reduction and rehabilitation programs do not fully meet existing demand. In practice, individuals seeking treatment may face long wait times, and emergency responses are not always able to prevent fatal outcomes. This suggests that while current policies and interventions are important, they may not be sufficient on their own. Rather than focusing only on reducing supply or improving treatment access, it may also be useful to consider how resources are allocated and whether broader factors influence when and where harms occur. In analyzing the data, a clear pattern emerges: periods of increasing economic pressure appear to align with increases in opioid-related harms.</p>
+        <p>Opioid-related harms continue to be a major public health issue in Canada, particularly in the form of overdose deaths and hospitalizations. Over the past decade, both measures have shown concerning trends, suggesting that the problem is not only persistent but also evolving over time. Most explanations for these harms focus on direct factors such as drug supply and policy, as well as prescribing practices. While these are clearly important, they do not fully explain why harms rise and fall over time. This suggests that broader, system-level factors may also be influencing outcomes.</p>
+        <p>One possible factor is the overall economic environment and pressure. When economic conditions worsen, individuals may experience increased financial strain, job insecurity, and reduced access to resources. These conditions can lead to higher stress levels, which in turn might increase the likelihood of substance use as a coping mechanism. In addition, barriers to healthcare can make it more difficult for individuals to seek treatment or support. Taken together, these effects suggest that economic stress contributes to worsening health outcomes, including opioid-related harms.</p>
+        <p>One way to observe changes in economic conditions is through monetary policy. In the case of this study, the policies in question are interest rate changes set by institutions like the Bank of Canada. Unlike broader economic indicators like unemployment or income, interest rate changes occur at clearly defined points in time and are directly set by policy. This makes them easier to identify as discrete shocks, allowing for a more precise analysis of how sudden increases in financial pressure may translate into changes in opioid-related harms.</p>
+        <p>When interest rates increase and borrowing becomes more expensive, both households and businesses may face tighter financial conditions. The resulting financial stress can cause mental strain, which in turn leads to a higher likelihood of substance use, and therefore an increased risk of opioid-related harm. However, these effects are not immediate. Just as it takes time for interest rate changes to affect spending and employment, it likely also takes time for these changes to influence health outcomes. A rate increase today may not significantly impact an individual's financial situation until months later, once expenses accumulate or income becomes unstable. Because of this, any relationship between interest rates and opioid harms is expected to appear with a delay, which this study estimates to be on the order of one to two quarters.</p>
+        <p>Despite this plausible mechanism, there is little existing research examining the relationship between interest rate changes and opioid-related harms directly, especially in Canada. Most studies focus on long-term socioeconomic differences and economic cycles rather than short-term policy changes. This creates a gap in the current literature: if rapid increases in interest rates act as identifiable shocks, they may provide a new way to test whether economic stress translates into measurable changes in health outcomes.</p>
+        <p>This research paper tests whether rapid increases in interest rates are followed by increases in opioid-related harms. The expectation is that any effect will not be immediate, but will instead appear after one to two quarters.</p>
+      </div>
+
+      <div class="ms-section">
+        <h2>Methods</h2>
+        <p>Our study required the use of three datasets. Firstly, we obtained our "Substance Harms" data which we filtered to only include opioid observations reported per quarter for the ten Canadian provinces under our specified timeline. Next we added the national policy rate data which was obtained from the Bank of Canada Valet series and aggregated the values to be quarterly. Lastly, we have our unemployment dataset which we converted to quarterly averages to be able to fit in the same time window. This dataset was included in our study as a control model because unemployment is a major alternative explanation for changes in opioid harms that has the potential to move at the same time as interest rates. Overall, all datasets were cleaned using R or Python and standardized to a consistent time identifier (YYYYQ#); then merged into a master province-quarter panel.</p>
+        <p>The primary exposure variable was a "monetary tightening shock", which we defined as a quarter in which the interest rate increased by at least 0.50 percentage points from the previous quarter. This threshold was set because a standard increase quarter-to-quarter is typically 25 basis points or 0.25%. Our threshold for a "shock" is essentially two times the anticipated increase. Using this information, we test delayed associations by defining two new variables called <em>lag1</em> and <em>lag2</em> which respectively represent the change in opioid-harms 1–2 quarters subsequent to an interest rate hike. With these variables, we estimated multiple regression models separately for both opioid deaths and opioid-related hospitalizations. Our models include province fixed effects to control for invariance and a time trend to account for overall changes across our study period. This ensures that we are comparing provinces fairly and controls stable differences such as population size or long-run differences in health systems. Since interest rate shocks are a national measure that varies only across time, full quarter fixed effects could not be included without absorbing the shock variables. Following the regression, we conducted a joint F-test of the lagged shock coefficients at α = 0.05. We indicated a null hypothesis (H₀: β<sub>lag1</sub> = 0 and β<sub>lag2</sub> = 0) that set both lag effects equal to zero while our alternative hypothesis (H<sub>A</sub>: β<sub>lag1</sub> ≠ 0 or β<sub>lag2</sub> ≠ 0) was that at least one of the effects differed from zero. Overall, this design allows us to evaluate lagged associations between tightening shocks and opioid outcomes while controlling for differences between the provinces.</p>
+      </div>
+
+      <div class="ms-section">
+        <h2>Results</h2>
+        <p>We begin with descriptive visualizations of opioid outcomes and monetary tightening over time, and then present regression-based hypothesis tests of lagged shocked effects. Figure 1 shows quarterly opioid deaths and hospitalizations across Canadian provinces from 2016Q1 to 2025Q2.</p>
+        <div class="ms-figure">
+          <img src="fig1.png" alt="Figure 1: Opioid Harms over Time" />
+          <p class="ms-caption"><strong>Figure 1: Opioid Harms over Time</strong></p>
+        </div>
+        <p>Both outcomes increased over the observation period, with deaths rising from roughly 1000 per quarter in 2016 to over 2000 by the early 2020s before showing some fluctuation in later years. Hospitalizations followed a similar upward pattern, though with a somewhat flatter trajectory compared to deaths. The consistent upward trend across both outcomes motivated the inclusion of a linear time trend in all regression models, to separate pre-existing growth from any effects attributable to monetary tightening shocks.</p>
+        <p>Figure 2 plots the Bank of Canada overnight rate alongside the timing of identified tightening shocks; quarters where the rate increased by 50 basis points or more relative to the prior quarter.</p>
+        <div class="ms-figure">
+          <img src="fig2.png" alt="Figure 2: Interest Rate / Tightening Shocks over Time" />
+          <p class="ms-caption"><strong>Figure 2: Interest Rate / Tightening Shocks Over Time</strong> (Dots represent shocks)</p>
+        </div>
+        <p>The policy rate remained low and largely stable from 2016 through 2021, before rising sharply through 2022 and into 2023. The majority of identified shocks cluster within this tightening cycle, with a smaller number of shocks appearing in earlier periods. This pattern confirms that the shock variable captures distinct, concentrated episodes of rapid monetary tightening rather than gradual or routine rate adjustments, and provides meaningful variation for testing lagged associations with opioid outcomes.</p>
+        <div class="ms-figure">
+          <img src="fig3.png" alt="Figure 3: Provincial Variation in Opioid Harms" />
+          <p class="ms-caption"><strong>Figure 3: Provincial Variation in Opioid Harms</strong></p>
+        </div>
+        <p>Lighter shading indicates higher hospitalization counts, with values ranging from approximately 200 in darker cells to 600 in the lightest. Substantial variation is visible both across provinces and within provinces over time. Some provinces show consistently lighter shading throughout the study period, while others remain darker. This cross-provincial variation supports the use of province fixed effects in the regression models, as it indicates that each province carries a distinct baseline level of opioid-related harm that needs to be accounted for independently of the shock exposure.</p>
+        <p>Table 1 reports coefficient estimates and joint F-test results from four panel regression models, with opioid deaths and hospitalizations as separate outcomes, each estimated with and without unemployment as a control variable.</p>
+        <div class="ms-figure">
+          <img src="table1.png" alt="Table 1: Regression Results and Joint F-Test" />
+          <p class="ms-caption"><strong>Table 1: Regression Results and Joint F-Test (α = 0.05)</strong></p>
+        </div>
+        <p>All of our models include province fixed effects. Regarding opioid deaths, our baseline model without unemployment produced positive coefficients for both shock variables, indicating an increase in deaths/hospitalizations; though neither reached statistical significance at α = 0.05, and failing to reject the null hypothesis. After adding unemployment as a control, the lag estimates increased and the two-quarter lag was marginal, while unemployment was strongly significant. Importantly, the joint F-test rejected the null hypothesis for the unemployment-deaths model (p = 0.0246), indicating that the lagged shock terms are jointly associated with deaths in that specification. In contrast, hospitalization models showed little evidence of an association: lag coefficients were small and non-significant, unemployment was not significant, and joint F-tests retained the null hypothesis in both models.</p>
+        <p>Across all four models, the two-quarter lag coefficient was consistently larger than the one-quarter lag, suggesting that any association between monetary tightening and opioid harms builds over time rather than appearing immediately following a shock.</p>
+      </div>
+
+      <div class="ms-section">
+        <h2>Discussion</h2>
+        <p>Our results suggest that monetary tightening shocks are associated with subsequent increases in opioid harms, with the clearest evidence appearing for opioid deaths and with effects most apparent around the two quarters after. In contrast, we do not find statistically significant evidence of lagged tightening effects on opioid-related hospitalizations under the 0.50% threshold definition. We intend that our findings will be used by health care workers to further prepare for opioid incidents at more appropriate periods of time. In doing so, our healthcare safety net can be effectively deployed at the right times. Plenty of effort and funding has gone into our first responding health care system at all three levels of government; the resources aren't what we're criticizing. Rather, using those same resources, we've curated a strategy that can mitigate what we view to be the inevitable harms of opioids. Interest rate hikes are also influenced by forces out of the realm of this study, so our plan is an effort to balance these two unavoidable circumstances to create a safety plan.</p>
+        <p>In stating this, it's imperative to draw a clear distinction between correlation and causation in our report. Given that there is no one-to-one correlation between opioid harms and interest rate shocks, we cannot claim causation. Our correlation is significant and can be used to pre-emptively prepare our health care teams.</p>
+        <p>The dataset we used, "Substance Harms Dataset", fails to address all health incidents. There are limitations that skew our data towards the underrepresentation of individuals. This dataset, from 2016–2025, is managed by the Public Health Agency of Canada (PHAC). Deaths are from the Canadian Coroner and Medical Examiner Base.</p>
+        <p>Reporting of these two variables — deaths and hospitalizations — varies in ambiguity. To start, many opioid users are often marginalized/underrepresented and consequently don't even make it into the consideration of death by opioid metrics. Deaths are more direct, and are reported immediately with urgency, especially for publicly scrutinized reports like the Hospital Standardized Mortality Ratio. For these reasons, deaths are reported by the National Substance Harms Dataset with higher priority. The signifiers of the health crisis put emphasis on more severe incidents — e.g., someone with a slow heart rate will not be reported in statistics as fast as a death.</p>
+        <p>Deaths that were caused by opioids may be entered as having an "unknown cause", when the opioid was mixed with other narcotics, or the influence of opioids towards death was not put into enough consideration.</p>
+        <p>Reports of hospitalization are also skewed. Some users may not recognize the need to be hospitalized and continue to live with health risks. Another case may be users who recognize the need to be hospitalized and simply choose not to, as it impedes their freedom and opioid consumption. Others may have people they are obliged to take care of, and therefore can't afford to go to the hospital and go through withdrawal programs.</p>
+        <p>These limitations may explain the stronger signal for deaths than hospitalizations as underreporting and misclassification may bias results toward weaker effects. Future studies should incorporate other indicators to better capture non-fatal opioid outcomes.</p>
+      </div>
+
+      <div class="ms-section">
+        <h2>References</h2>
+        <p class="ms-ref">Bank of Canada. (n.d.). <em>Target for the overnight rate (V39079)</em> [Data set]. Bank of Canada Valet API. Retrieved March 28, 2026, from https://www.bankofcanada.ca/valet/</p>
+        <p class="ms-ref">Belzak, L., &amp; Halverson, J. (2018). Evidence synthesis—The opioid crisis in Canada: A national perspective. <em>Health Promotion and Chronic Disease Prevention in Canada, 38</em>(6), 224–238.</p>
+        <p class="ms-ref">Braveman, P., &amp; Gottlieb, L. (2014). The social determinants of health: it's time to consider the causes of the causes. <em>Public health reports, 129</em> Suppl 2, 19–31. https://doi.org/10.1177/00333549141291S206B</p>
+        <p class="ms-ref">Case, A., &amp; Deaton, A. (2020). <em>Deaths of despair and the future of capitalism.</em> Princeton University Press.</p>
+        <p class="ms-ref">Statistics Canada. (2026). <em>Labour force characteristics by province, monthly, seasonally adjusted and trend-cycle</em> (Table 14-10-0287-03) [Data set]. Government of Canada.</p>
+        <p class="ms-ref">Public Health Agency of Canada. (2026, March 25). <em>Opioid- and stimulant-related harms in Canada.</em> Government of Canada. Retrieved April 11, 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

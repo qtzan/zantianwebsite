@@ -2,17 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:         #070c14;
-  --surface:    #0f1623;
-  --surface2:   #161f30;
-  --border:     #1e2d45;
-  --accent:     #38bdf8;
-  --accent-dim: rgba(56, 189, 248, 0.12);
-  --purple:     #a78bfa;
-  --green:      #34d399;
-  --text:       #cbd5e1;
-  --text-hi:    #f1f5f9;
-  --text-lo:    #475569;
+  --bg:         #f8fafc;
+  --surface:    #ffffff;
+  --surface2:   #f1f5f9;
+  --border:     #e2e8f0;
+  --accent:     #0284c7;
+  --accent-dim: rgba(2, 132, 199, 0.08);
+  --purple:     #7c3aed;
+  --green:      #059669;
+  --text:       #334155;
+  --text-hi:    #0f172a;
+  --text-lo:    #94a3b8;
   --radius:     12px;
   --mono:       'Space Mono', monospace;
 }
@@ -36,8 +36,8 @@ html, body {
    SHIFTER PANEL
 ═══════════════════════════════════════════════ */
 .shifter-panel {
-  width: 380px;
-  min-width: 380px;
+  width: 540px;
+  min-width: 540px;
   background: var(--surface);
   border-right: 1px solid var(--border);
   display: flex;
@@ -53,7 +53,7 @@ html, body {
 /* Console box */
 .console {
   width: 100%;
-  background: #07101c;
+  background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem 1rem;
@@ -61,8 +61,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   box-shadow:
-    inset 0 2px 10px rgba(0, 0, 0, 0.6),
-    0 0 48px rgba(56, 189, 248, 0.04);
+    inset 0 2px 8px rgba(0, 0, 0, 0.06),
+    0 0 0 1px var(--border);
 }
 
 .console-hint {
@@ -77,8 +77,8 @@ html, body {
 /* Gate wrapper — must match SVG viewBox aspect ratio */
 .gate-wrapper {
   position: relative;
-  width: 260px;
-  height: 286px;
+  width: 390px;
+  height: 429px;
   cursor: default;
 }
 
@@ -91,7 +91,7 @@ html, body {
 }
 
 .gate-path {
-  stroke: #1a2d46;
+  stroke: #cbd5e1;
   stroke-width: 6;
   stroke-linecap: round;
   transition: stroke 0.4s;
@@ -100,7 +100,7 @@ html, body {
 .gear-label {
   font-family: var(--mono);
   font-size: 13px;
-  fill: #243348;
+  fill: #94a3b8;
   text-anchor: middle;
   dominant-baseline: middle;
   transition: fill 0.3s;
@@ -110,40 +110,40 @@ html, body {
 
 .gear-label.lit {
   fill: var(--accent);
-  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.8));
+  filter: drop-shadow(0 0 4px rgba(2, 132, 199, 0.4));
 }
 
 .gear-node {
-  fill: #0d1a2a;
-  stroke: #1a2d46;
+  fill: #e2e8f0;
+  stroke: #cbd5e1;
   stroke-width: 2;
   cursor: pointer;
   transition: fill 0.25s, stroke 0.25s;
 }
 
 .gear-node:hover {
-  fill: #1e3050;
-  stroke: #38bdf8;
+  fill: #bae6fd;
+  stroke: var(--accent);
 }
 
 .gear-node.active {
   fill: var(--accent);
   stroke: var(--accent);
-  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+  filter: drop-shadow(0 0 6px rgba(2, 132, 199, 0.5));
 }
 
 /* Knob — absolutely positioned, centered on gear coord via transform */
 .knob {
   position: absolute;
-  width: 72px;
-  height: 72px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #2d3f58, #111c2e);
-  border: 2px solid #253649;
+  background: radial-gradient(circle at 35% 30%, #f1f5f9, #94a3b8);
+  border: 2px solid #cbd5e1;
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.85),
-    inset 0 1px 3px rgba(255, 255, 255, 0.07),
-    0 0 0 1px #07101c;
+    0 8px 20px rgba(0, 0, 0, 0.18),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.08);
   cursor: grab;
   display: flex;
   align-items: center;
@@ -158,17 +158,18 @@ html, body {
 .knob.dragging {
   cursor: grabbing;
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.85),
-    inset 0 1px 3px rgba(255, 255, 255, 0.07),
-    0 0 0 1px #07101c,
-    0 0 32px rgba(56, 189, 248, 0.3);
+    0 4px 10px rgba(0, 0, 0, 0.18),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.08),
+    0 0 0 3px rgba(2, 132, 199, 0.25);
 }
 
 .knob-face {
-  width: 54px;
-  height: 54px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, #1d2d42, #0c1624);
+  background: radial-gradient(circle at 40% 35%, #ffffff, #e2e8f0);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,7 +177,7 @@ html, body {
 
 .knob-num {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -231,7 +232,7 @@ html, body {
 
 .nav-item.active {
   color: var(--accent);
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: rgba(2, 132, 199, 0.3);
   background: var(--accent-dim);
 }
 
@@ -243,7 +244,7 @@ html, body {
   overflow-y: auto;
   background: var(--bg);
   /* subtle dot grid */
-  background-image: radial-gradient(circle, #1e2d45 1px, transparent 1px);
+  background-image: radial-gradient(circle, #dde4ee 1px, transparent 1px);
   background-size: 28px 28px;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
@@ -279,11 +280,11 @@ html, body {
 }
 
 .welcome-name {
-  font-family: var(--mono);
+  font-family: 'Calibri', Calibri, sans-serif;
   font-size: clamp(2.8rem, 6vw, 5.5rem);
   letter-spacing: 10px;
   color: var(--accent);
-  text-shadow: 0 0 50px rgba(56, 189, 248, 0.45);
+  text-shadow: 0 0 50px rgba(2, 132, 199, 0.3);
   line-height: 1;
 }
 
@@ -375,7 +376,7 @@ html, body {
   font-weight: 700;
   color: var(--accent);
   flex-shrink: 0;
-  box-shadow: 0 0 18px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 18px rgba(2, 132, 199, 0.15);
 }
 
 .section-header h2 {
@@ -409,7 +410,7 @@ html, body {
   font-family: var(--mono);
   font-size: 1.8rem;
   color: var(--accent);
-  box-shadow: 0 0 36px rgba(56, 189, 248, 0.18);
+  box-shadow: 0 0 36px rgba(2, 132, 199, 0.15);
   letter-spacing: 3px;
 }
 
@@ -748,8 +749,8 @@ html, body {
 }
 
 .contact-item:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.08);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
   transform: translateX(3px);
 }
 
@@ -758,7 +759,7 @@ html, body {
   height: 42px;
   border-radius: 8px;
   background: var(--accent-dim);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(2, 132, 199, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -824,7 +825,7 @@ html, body {
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
 }
 
 .modal-close {
